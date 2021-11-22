@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-    DSN3099-Epic-Project-Responses
+    Survey For DSN3099-Epic-Project
     </title>
   <link rel="canonical" href="https://en.letswrite.tw/custom-google-form/">
 
@@ -22,12 +22,15 @@
       padding: 0;
       width: 100%;
       height: 100%;
+      background-color: rgba(221, 224, 223, 0.514);
     }
     .container {
       max-width: 100%;
     }
     button {
       font-size: 16px;
+      background: linear-gradient(to right top, #44c9c2da 3%, #0888f0ef, #60e4ce, #088cf8f8, #3ef8e9);
+  color: rgba(65, 241, 241, 0.74);
     }
 
     .half {
@@ -62,6 +65,7 @@
     }
     .input-group {
       margin-bottom: 30px;
+      
     }
     .radio-group label {
       display: inline-block;
@@ -78,6 +82,7 @@
       }
       .bg {
         height: 30vh;
+       
       }
       form {
         padding-right: 12px;
@@ -87,7 +92,7 @@
 
   </style>
 
-  <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png"/>
+  <link rel="shortcut icon" href="https://img.icons8.com/cute-clipart/50/000000/survey.png"/>
 
  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -96,6 +101,12 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-KKHDZLF');</script>
   <!-- End Google Tag Manager -->
+
+  <script type="text/javascript">
+    window.onload = function(){
+        alert("This survey is meant to gain a better understanding of how to resolve various issues faced by learners at school or college level and  the information collected will be used for academic and research purposes (may or may not) and will not be subjectively evaluated.");
+    }
+</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -109,7 +120,8 @@
       
       <!-- form -->
       <section class="six columns half form">
-        <h1>Express Your Idea!!</h1>
+      <h2>Survey For DSN3099-Epic-Project</h2>
+     
         <form>
           <!-- name -->
           <div class="input-group">
@@ -117,26 +129,26 @@
             <input class="u-full-width" type="text" placeholder="please enter your name" id="demo_name">
           </div>
 
-          <!-- gender -->
+          <!-- profession -->
           <div class="input-group">
-            <label>Gender</label>
+            <label>Studying / Teaching at ?</label>
             <div class="radio-group row">
-              <!-- male -->
+              <!-- school -->
               <div class="four columns">
-                <input type="radio" id="male" name="demo_radio" value="male" checked>
-                <label for="male">Male</label>
+                <input type="radio" id="School" name="demo_radio" value="School" checked>
+                <label for="School">School</label>
               </div>
 
-              <!-- female -->
+              <!-- college -->
               <div class="four columns">
-                <input type="radio" id="female" name="demo_radio" value="female">
-                <label for="female">Female</label>
+                <input type="radio" id="College" name="demo_radio" value="College">
+                <label for="College">College</label>
               </div>
 
-              <!-- legal -->
+              <!-- NA -->
               <div class="four columns">
-                <input type="radio" id="legal" name="demo_radio" value="legal">
-                <label for="legal">Legal</label>
+                <input type="radio" id="NA" name="demo_radio" value="NA">
+                <label for="NA">NA</label>
               </div>
             </div>
           </div>
@@ -146,19 +158,27 @@
             <label for="demo_select">Category</label>
             <select class="u-full-width" id="demo_select">
               <option value="0" value="0" selected disabled>choose one</option>
-              <option value="cat">Cat</option>
-              <option value="dog">Dog</option>
-              <option value="bear">Bear</option>
+              <option value="Visualization of Maths and Physics Formulas">Visualization of Maths and Physics Formulas</option>
+              <option value="Visualization of Algorithms">Visualization of Algorithms</option>
+              <option value="Both">Both</option>
             </select>
           </div>
 
           <!-- question -->
           <div class="input-group">
-            <label for="demo_textarea">Question</label>
-            <textarea class="u-full-width" id="demo_textarea"></textarea>
+            <label for="demo_textarea">Difficulty that you face ?</label>
+            <select class="u-full-width" id="demo_select">
+              <option value="0" value="0" selected disabled>choose one</option>
+              <option value="Remembaring The Formula or Key Concept">Remembaring The Formula or Key Concept</option>
+              <option value="Visualizing the problem">Visualizing the problem</option>
+              <option value="Both">Both</option>
+            </select>
+            <br><br>
+            <label for="demo_textarea">What should be done to resolve your issues ?</label>
+            <textarea class="u-full-width" placeholder="describe briefly" id="demo_textarea"></textarea>
           </div>
 
-          <button type="button" id="submit" class="button-primary u-full-width">Confirm</button>
+          <button type="button" id="submit" class="button-primary u-full-width">Submit</button>
 
         </form>
       </section>
@@ -173,8 +193,8 @@
         // name
         var name = $('#demo_name').val() || 'no set';
 
-        // gender
-        var gender = function() {
+        // profession
+        var profession = function() {
           var v;
           $('[name="demo_radio"]').each(function() {
             if($(this).prop('checked') === true) v = $(this).val();
@@ -185,14 +205,18 @@
         // category
         var cat = $('#demo_select').val() || 'no set';
 
+        // dyf
+        var dyf = $('#demo_select').val() || 'no set';
+
         // question
         var question = $('#demo_textarea').val() || 'no set';
 
         // post
         var data = {
           'entry.293114820': name,
-          'entry.1876884555': gender(),
+          'entry.1876884555': profession(),
           'entry.390231904': cat,
+          'entry.1533043631': dyf,
           'entry.853683150': question
         };
         $.ajax({
